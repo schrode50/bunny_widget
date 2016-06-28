@@ -9,9 +9,24 @@ gulp.task('copy', () => {
 });
 
 gulp.task('bundle', () => {
-  return gulp.src('./app/**/*.js')
+  return gulp.src('./app/js/client.js')
     .pipe(webpack({output:{filename: 'bundle.js'}}))
     .pipe(gulp.dest('./build'));
+});
+
+gulp.task('bundle:test', () => {
+  return gulp.src('./test/**/*_test.js')
+    .pipe(webpack({
+      output:{
+        filename: 'test_bundle.js'
+      },
+      module: {
+        loaders: [{
+          test: /\.html$/,
+          loader: 'html'
+        }]
+      }
+    })).pipe(gulp.dest('./test'));
 });
 
 gulp.task('build', ['copy', 'bundle']);
