@@ -8,17 +8,27 @@
     <title>Bunny Images</title>
 </head>
 
-<body data-ng-app="bunnyWidget">
+<!-- <body data-ng-app="bunnyWidget">
 
-    <main ng-cloak ng-controller="BunnyController as iCtrl">
-      <!-- {{iCtrl.url}} -->
-      <description-directive url="{{iCtrl.url}}" title="{{iCtrl.title}}" description="{{iCtrl.description}}"></description-directive>
+  <main ng-cloak ng-controller="BunnyController as iCtrl">
+    <description-directive url="{{iCtrl.url}}" title="{{iCtrl.title}}" description="{{iCtrl.description}}"></description-directive>
 
-      <full-directive url="{{iCtrl.url}}" title="{{iCtrl.title}}" description="{{iCtrl.description}}"></full-directive>
+    <full-directive url="{{iCtrl.url}}" title="{{iCtrl.title}}" description="{{iCtrl.description}}"></full-directive>
 
-      <thumb-directive url="{{iCtrl.url}}" description="{{iCtrl.description}}"></thumb-directive>
+    <thumb-directive url="{{iCtrl.url}}" description="{{iCtrl.description}}"></thumb-directive>
 
-    </main>
+  </main> -->
+
+<body data-ng-app="CuteApp">
+
+  <main ng-cloak ng-controller="AlbumController as albumctrl">
+
+    <photo-album-directive animal="albumctrl.tick"></photo-album-directive>
+    <photo-album-directive animal="albumctrl.bedbugs"></photo-album-directive>
+    <photo-album-directive animal="albumctrl.puppies"></photo-album-directive>
+
+  </main>
+
     <script src="bundle.js"></script>
 </body>
 

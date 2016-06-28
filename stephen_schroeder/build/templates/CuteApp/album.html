@@ -1,0 +1,15 @@
+<div ng-init="mode = 'thumbnails'">
+
+  <description-directive animal="animal" ng-show="mode === 'descriptions'"></description-directive>
+
+  <div ng-repeat="imageurl in animal.images" class="gallery">
+    <thumbnail-directive imageUrl="imageurl" ng-click="toggleImage(imageurl)" ng-show="mode === 'thumbnails'"></thumbnail-directive>
+  </div>
+
+  <full-directive ng-click="toggleImage()" currentimageurl="currentimageurl" ng-show="mode === 'full'"></full-directive>
+
+  <div>
+    <label>Descriptions<input type="radio" name="mode" value="descriptions" ng-model="mode" ng-change="changeView()"/></label>
+    <label>Thumbnails<input type="radio" name="mode" value="thumbnails" ng-model="mode" ng-change="changeView()"/></label>
+  </div>
+</div>

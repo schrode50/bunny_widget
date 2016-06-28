@@ -1,5 +1,6 @@
 module.exports = function(app) {
   require('./DescriptionDirective')(app);
   require('./FullDirective')(app);
-  require('./ThumbDirective')(app);
+  require('./ThumbnailDirective')(app);
+  require('./PhotoAlbumDirective')(app);
 };
