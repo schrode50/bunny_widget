@@ -1,4 +1,6 @@
+'use strict';
+
 const angular = require('angular');
 
-const bunnyWidget = angular.module('bunnyWidget', []);
-require('./first')(bunnyWidget);
+const CuteApp = angular.module('CuteApp', []);
+require('./CuteApp')(CuteApp);
